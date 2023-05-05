@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }}>
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Laptop Price Predictor</h1>
+        {% if data_dict.prediction!=False %}
+        <h2>The Predicted Price is {{data_dict.prediction}}</h2>
+        {% endif %}
+    </header>
+
+   
+    <main class="main">
+
+        <section class="section">
+
+            <form action="/predict" method="post">
+
+                <div class="row">
+                    <!-- brand name -->
+                    <select name="brand" required>
+                        <option value="" selected disabled>Brand</option>
+                        {% for company in data_dict.company %}
+                        <option value={{company}}>{{company}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <!-- typename -->
+                    <select name="typename" required>
+                        <option value=""  selected disabled>Type</option>
+                        {% for typename in data_dict.typename %}
+                        <option value={{typename}}>{{typename}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <!-- ram -->
+                    <select name="ram" required>
+                        <option value=""  selected disabled>Ram (In GB)</option>
+                        {% for ram in data_dict.ram %}
+                        <option value={{ram}}>{{ram}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="row">
+                    <!-- weight -->
+                    <input required placeholder="Weight ( In Kgs )" type="number" step="0.01"  name="weight">
+
+                    <!-- touchscreen -->
+                    <select name="touchscreen" required>
+                        <option value=""  selected disabled>TouchScreen</option>
+                        {% for touchscreen in data_dict.touchscreen %}
+
+                            {% if touchscreen==1 %}
+                            <option value={{touchscreen}}>Yes</option>
+                            {% elif touchscreen==0 %}
+                            <option value={{touchscreen}}>No</option>
+
+                            {% endif %}
+
+                        {% endfor %}
+                    </select>
+
+                    <!-- ips-display -->
+                    <select name="IPS" required>
+                        <option value="" selected disabled>IPS</option>
+                        {% for ips in data_dict.isips %}
+
+                            {% if ips==1 %}
+                            <option value={{ips}}>Yes</option>
+                            {% elif ips==0 %}
+                            <option value={{ips}}>No</option>
+
+                            {% endif %}
+
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="row">
+                    <!-- screen size -->
+                    <input required placeholder='screen size (In Inches)' type="number" step="0.01" name="screen_size">
+                    
+                    <!-- resolution -->
+                    <select name="resolution" required>
+                        <option value="" selected disabled>Resolution</option>
+                        {% for resolutions in data_dict.resolution %}
+                        <option value={{resolutions}}>{{resolutions}}</option>
+                        {% endfor %}
+                    </select>
+                    
+                    <!-- cpu -->
+                    <select name="cpu" required>
+                        <option value="" selected disabled>CPU</option>
+                        {% for cpu in data_dict.cpubrand %}
+                        <option value='{{cpu}}'>{{ cpu }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="row">
+                    <!-- ssd -->
+                    <select name="ssd" required>
+                        <option value="" selected disabled>SSD</option>
+                        {% for ssd in data_dict.ssd %}
+                        <option value={{ssd}}>{{ssd}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <!-- hdd -->
+                    <select name="hdd" required>
+                        <option value="" selected disabled>HDD</option>
+                        {% for hdd in data_dict.hdd %}
+                        <option value={{hdd}}>{{hdd}}</option>
+                        {% endfor %}
+                    </select>
+
+                    <!-- gpu -->
+                    <select name="gpu" required>
+                        <option value="" selected disabled>GPU</option>
+                        {% for gpu in data_dict.Gpu_brand %}
+                        <option value={{gpu}}>{{gpu.capitalize()}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="row">
+                    <!-- os -->
+                    <select name="os" required>
+                        <option value="" selected disabled>Operating System</option>
+                        {% for os in data_dict.os %}
+                        <option value='{{os}}'>{{os.capitalize()}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button id="predict-btn" type="submit">Predict</button>
+                    
+            </form>
+           
+        </section>
+
+    </main>
+
+
+</body>
+</html>
