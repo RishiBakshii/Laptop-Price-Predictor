@@ -263,7 +263,7 @@ df['Flash_Storage']=[int(i) for i in flash_storage_values]
 - this algorithm analyses different values and cleans the Memory Column accordingly and then returns dummy variables for each category
 ![](https://github.com/RishiBakshii/Laptop-Price-Predictor/blob/main/static/images/algorithm-output.png?raw=true)
 
-## 4. Moddeling
+## 4. Modeling
 - Random Forest Regressor is Used as a Predictive Model
 - ### Here's the Pipeline
 ```py
