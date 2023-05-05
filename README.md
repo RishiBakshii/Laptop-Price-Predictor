@@ -75,6 +75,12 @@ This project aims to predict the price of a laptop based on 12 different feature
 
 - ### More indepth and detailed analysis  is given at the provided [Jupyter Notebook](main.ipynb)
 
+- ## Summary
+    - The market of Laptops and the customers in this market are more towards the Budget Segment
+    - Customers are more likely to spend a big Distribution of their Budget in the Processor 
+    - As According to the analysis we observed that even after the high prices of Ips display laptops their selling rate was not drastically lower infact it was comparatively high as according to the other low selling rates 
+    - So the insights are customers are not likely to compromise much when it comes to the quality of display and laptops Performance
+
 ## 3. Feature Engineering
 - Written a Custom Algorithm for Data Cleaning and Creating the Dummy variables
 ```py
