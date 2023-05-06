@@ -7,12 +7,37 @@ A simple Flask Powered web appliation which predicts the price of a laptop
 
 ## Project Objective
 This project aims to predict the price of a laptop based on 12 different features/Configurations provided by the user
+
+![](https://github.com/RishiBakshii/Laptop-Price-Predictor/blob/main/static/images/front-end-image.png?raw=true)
+## - Responsive Design
+![](https://github.com/RishiBakshii/Laptop-Price-Predictor/blob/main/static/images/front-end-image-phone.png?raw=true)
+![]()
 ## Project Highlights
 - #### **Custom Algorithm** for data cleaning and creation of dummy variables
 - #### **Detailed jupyter notebook** with the mention of every single step performed and observations
 - **Usage of Sklearn Pipelines**
 - Evaluation Metrics - [ R2 score and Mean Absolute Error ]
 
+
+
+## Usage
+- Download the Repository Code as Zip
+- To use this project on your local machine unzip the file
+- And activate the given virtual environment by using this command
+
+- Windows
+  ```cmd
+    venv\Scripts\activate
+    ```
+- Mac
+  ```cmd
+    source ~/venv/bin/activate
+    ```
+- Linux
+  ```cmd
+    source /venv/bin/activate
+
+    ```
 
 
 ## Dataset Description
@@ -263,7 +288,7 @@ df['Flash_Storage']=[int(i) for i in flash_storage_values]
 - this algorithm analyses different values and cleans the Memory Column accordingly and then returns dummy variables for each category
 ![](https://github.com/RishiBakshii/Laptop-Price-Predictor/blob/main/static/images/algorithm-output.png?raw=true)
 
-## 4. Modeling
+## 4. Moddeling
 - Random Forest Regressor is Used as a Predictive Model
 - ### Here's the Pipeline
 ```py
