@@ -323,8 +323,8 @@ pickle.dump(df,open("df.pkl",'wb'))
 ```
 
 ## 5. Deployment
-- The Flask web app is Currently Deployed at PythonAnywhere
-- And can be visited here [Laptop Price Predictor]()
+- The Flask web app is Currently Deployed at Render
+- And can be visited here [Laptop Price Predictor](https://laptop-price-predictor-plkk.onrender.com/)
 ## Authors
 
 - [@RishiBakshi](https://github.com/RishiBakshii)
